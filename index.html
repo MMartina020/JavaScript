@@ -6,62 +6,95 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="java.css">
     <link rel="shortcut icon" href="js.png" type="image/x-icon">
+    <link rel="stylesheet" href="stilus.css">
     <title>Javascript</title>
 </head>
 
 <body>
+    
+    <div class="navbar" id="a">
+        <button><a href="">Visszaállítás</a></button> 
+        <button onclick="adathbe()">Adathasználat csökkentő be</button>
+        <button onclick="adathki()">Adathasználat csökkentő ki</button>
+        <button type="button" onclick="document.getElementById('a').style.fontSize='1.85rem'">Olvasó mód be</button>
+    
+        <button type="button" onclick="document.getElementById('a').style.fontSize='1.0rem'">Olvasó mód ki</button>
+
+        <button  type="button" onclick="myFunction('a')">Éjszakai mód/Nappali mód</button>
+
+        <script>
+            function myFunction() {
+                var element = document.body;
+                element.classList.toggle("dark-mode");
+            }
+        </script>
+      </div>
+      
     <script>
-        function myFunction() {
-            var element = document.body;
-            element.classList.toggle("dark-mode");
+        
+        function adathbe() {
+          document.getElementById("kepem").style.visibility = "hidden";
+          document.getElementById("kepem2").style.visibility = "hidden";
+          document.getElementById("kepem3").style.visibility = "hidden";
+          document.getElementById("kepem4").style.visibility = "hidden";
         }
-    </script>
-    <div class="container bg-light p-3 my-4">
+        function adathki() {
+          document.getElementById("kepem").style.visibility="visible";
+          document.getElementById("kepem2").style.visibility="visible";
+          document.getElementById("kepem3").style.visibility="visible";
+          document.getElementById("kepem4").style.visibility="visible";
+        }
+        
+
+        </script>
+        
+
+    <div  id="a" class="container bg-light p-3 my-4" >
         <header class="text-center">
-            <h1>Mit tud a JavaScript?</h1>
+            <h1 class="cim">Mit tud a JavaScript?</h1>
             <button class="btn btn-block btn btn-outline-warning" type="button" onclick="alert('Az oldal készítője: Mátyás Martina')">Szerző</button><br>
             <button class="btn btn-block btn btn-outline-warning" type="button" onclick="window.print()">Oldal nyomtatása</button><br>
-            <button class="btn btn-outline-info" type="button" onclick="myFunction()">Éjszakai mód/Nappali mód</button>
             <hr>
         </header>
-        <div>
+        <div id="a">
             <button type="button" class="btn btn-outline-info" onclick="document.getElementById('demo').innerHTML = Date()">
             Mai dátum és idő megjelenítése</button>
             <button type="button" class="btn btn-outline-info" onclick="document.getElementById('demo').innerHTML =' ' ">
             Dátum törlése</button>
             <p id="demo"></p>
-            <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_myfirst" target="_blank"><img src="w3.PNG" alt="w3schools" class="rounded-circle border border-success"></a>
+            <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_myfirst" target="_blank"><img id= "kepem2" src="w3kicsi.PNG" alt="w3schools" class="rounded-circle border border-success"></a>
             <hr>
         </div>
-        <div>
+        <div id="a">
             <button class="btn btn-outline-info" onclick="document.getElementById('kepem').src='pic_bulbon.gif'">Kapcsold fel!</button>
 
             <img id="kepem" src="pic_bulboff.gif" alt="korte">
 
             <button class="btn btn-outline-info" onclick="document.getElementById('kepem').src='pic_bulboff.gif'">Kapcsold le!</button><br>
 
-            <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_intro_lightbulb" target="_blank"><img src="w3.PNG" alt="w3schools" class="rounded-circle border border-success"></a>
+            <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_intro_lightbulb" target="_blank"><img  id= "kepem3" src="w3kicsi.PNG" alt="w3schools" class="rounded-circle border border-success"></a>
             <hr>
         </div>
-        <div>
+        <div id="a">
             <h2>JavaScript megváltoztatja a HTML elemek stílusát.</h2>
             <p id="demo2">Megváltoztathatod a bekezdésed kinézetét.</p>
 
             <button type="button" class="btn btn-outline-info" onclick="document.getElementById('demo2').style.fontSize='34px'">Betűméret</button>
             <button type="button" class="btn btn-outline-info" onclick="document.getElementById('demo2').style.color='pink'">Betűszín</button>
-            <button type="button" class="btn btn-outline-info" onclick="document.getElementById('demo2').style.fontFamily='Verdana'">Betűtípus</button>
-            <button type="button" class="btn btn-outline-info" onclick="document.getElementById('demo2').style.border='dashed'">Szegély</button>
-            <button type="button" class="btn btn-outline-info" onclick="document.getElementById('demo2').style.padding='30px'">Belső margó</button>
-            <button type="button" class="btn btn-outline-info" onclick="document.getElementById('demo2').style.margin='20px'">Külső margó</button>
-            <button type="button" class="btn btn-outline-info" onclick="document.getElementById('demo2').style.backgroundColor='black'">Háttérszín</button><br><br>
+            <button type="button" class="btn btn-outline-info" onclick="document.getElementById('demo2').style.fontFamily='Arial'">Betűtípus</button>
+            <button type="button" class="btn btn-outline-info" onclick="document.getElementById('demo2').style.border='dotted'">Szegély</button>
+            <button type="button" class="btn btn-outline-info" onclick="document.getElementById('demo2').style.padding='50px'">Belső margó</button>
+            <button type="button" class="btn btn-outline-info" onclick="document.getElementById('demo2').style.margin='40px'">Külső margó</button>
+            <button type="button" class="btn btn-outline-info" onclick="document.getElementById('demo2').style.backgroundColor='purple'">Háttérszín</button><br><br>
         </div>
-        <footer>
-            <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_intro_style" target="_blank"><img src="w3.PNG" alt="w3schools" class="rounded-circle border border-success"></a>
-        </footer>
+
+
+
+    <footer>
+    <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_intro_style" target="_blank"><img id= "kepem4" src="w3kicsi.PNG" alt="w3schools" class="rounded-circle border border-success"></a>
+    </footer>
 
     </div>
 </body>
-
 </html>
